@@ -1,7 +1,5 @@
 ﻿# Project state
 
-C1-01 DONE; C1-02 DONE; checkpoint54fa02c.
-C1-03 DONE — runtime authenticated verification PASS using API User Secrets, EF/Npgsql and psql ON_ERROR_STOP. PostgreSQL18.6 at127.0.0.1:5433, oneoffice_dev owner postgres, runtime oneoffice_app least-privilege, zero non-system tables/views, no migration history table. Restore/build PASS with0warnings/0errors. Inventory SQL UTF-8 no BOM, four SELECTs, execution PASS.
-Evidence docs/C1-03_VERIFICATION.md. Reproduce via Development --verify-database API command. No HTTP database health route yet. Migration execution DEFERRED TO C1-06; no business entities or migrations created.
-C1-04 and later NOT STARTED. Stop for Owner/Architecture Reviewer. Current changes uncommitted against54fa02c. Actual effort not tracked; reference budget135h.
-Pending prior operational decisions: audit retention365days proposal, staging domains/secret provider, brand, backup schedule.
+C1-01/C1-02 DONE checkpoint54fa02c. C1-03 DONE checkpoint fcd467d, PostgreSQL18.6 runtime verification PASS. C1-04 DONE with evidence C1-04_VERIFICATION.md; its changes currently uncommitted against fcd467d pending acceptance checkpoint.
+C1-04 has liveness/readiness HTTP endpoints, ProblemDetails, safe logs, Development OpenAPI and audit contracts. Audit persistence/atomic E2E and migrations DEFERRED TO C1-06. C1-05 and later NOT STARTED.
+Actual effort untracked; planned135h. Pending audit retention, staging domains/secrets, brand and backup policy.

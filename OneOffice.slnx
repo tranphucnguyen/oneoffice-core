@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="OneOffice.Api/OneOffice.Api.csproj" />
+  <Project Path="OneOffice.Infrastructure/OneOffice.Infrastructure.csproj" />
+  <Project Path="OneOffice.SharedKernel/OneOffice.SharedKernel.csproj" />
+</Solution>

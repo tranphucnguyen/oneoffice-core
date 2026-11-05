@@ -1,43 +1,33 @@
-# Backlog — Phase 1
+# Backlog — 135 giờ
 
-Legend: `[ ]` not started; `[~]` in progress; `[x]` done with evidence. Update only when verified.
+Approved budget120–150h, reference135h, 15–20h/week. v0.2 summed130h; add2h to C1-04 durable audit,2h to C1-07 recovery,1h to C1-22 security integration. P0 security tests retained. Actual hours not measured.
 
-## Week 1 — 17h
-- [~] C1-01 (4h) ERD + rules + API contract + owner approval
-- [ ] C1-02 (4h) .NET solution + project references
-- [ ] C1-03 (4h) Docker + PostgreSQL + EF + migration
-- [ ] C1-04 (3h) ProblemDetails, logging, OpenAPI, health
-- [ ] C1-05 (2h) format/test/CI
+| Ticket | Hours | State | Output |
+|---|---:|---|---|
+| C1-01 | 5 | DONE | Design/approval |
+| C1-02 | 4 | DONE | Solution/references/build |
+| C1-03 | 6 | NOT STARTED | PostgreSQL/EF/migration |
+| C1-04 | 6 | NOT STARTED | Errors/OpenAPI/health/audit infrastructure |
+| C1-05 | 4 | NOT STARTED | Tests/format/CI |
+| C1-06 | 6 | NOT STARTED | Entities/constraints/audit mapping |
+| C1-07 | 8 | NOT STARTED | Bootstrap/password/login/recovery |
+| C1-08 | 8 | NOT STARTED | Refresh/replay/logout/me |
+| C1-09 | 7 | NOT STARTED | Scopes/projections/security tests |
+| C1-10 | 5 | NOT STARTED | Department/position/status |
+| C1-11 | 5 | NOT STARTED | Tree/cycle/concurrency |
+| C1-12 | 7 | NOT STARTED | Users/reporting/move/exemption |
+| C1-13 | 7 | NOT STARTED | Grants/seed/last admin |
+| C1-14 | 4 | NOT STARTED | React/router/client |
+| C1-15 | 6 | NOT STARTED | Design system/layout |
+| C1-16 | 5 | NOT STARTED | Login/session/multitab |
+| C1-17 | 6 | NOT STARTED | Employees UI |
+| C1-18 | 5 | NOT STARTED | Department UI |
+| C1-19 | 5 | NOT STARTED | Position/profile/detail UI |
+| C1-20 | 4 | NOT STARTED | Roles UI |
+| C1-21 | 4 | NOT STARTED | Dashboard/responsive integration |
+| C1-22 | 7 | NOT STARTED | Integration/E2E |
+| C1-23 | 5 | NOT STARTED | Security/accessibility |
+| C1-24 | 4 | NOT STARTED | Staging/backup/smoke |
+| C1-25 | 2 | NOT STARTED | Docs/demo/handoff |
 
-## Week 2 — 18h
-- [ ] C1-06 (4h) Users / Roles / Permissions / RefreshToken models
-- [ ] C1-07 (5h) password + login + signed JWT
-- [ ] C1-08 (5h) refresh rotation + logout + /me
-- [ ] C1-09 (4h) authorization policies & tests
-
-## Week 3 — 18h
-- [ ] C1-10 (5h) Departments / Positions / FK / indexes
-- [ ] C1-11 (4h) org tree + cycle guard
-- [ ] C1-12 (4h) user CRUD + manager validation
-- [ ] C1-13 (5h) scopes, assign roles, seed & tests
-
-## Week 4 — 18h
-- [ ] C1-14 (3h) React + Vite + router + API client
-- [ ] C1-15 (5h) tokens, layout, navigation, design system
-- [ ] C1-16 (4h) login UI + session / protected routes
-- [ ] C1-17 (6h) employees table & create/edit
-
-## Week 5 — 19h
-- [ ] C1-18 (5h) department tree + form
-- [ ] C1-19 (5h) position, employee detail, profile
-- [ ] C1-20 (4h) roles UI + permission actions
-- [ ] C1-21 (5h) dashboard, responsive, integrated flows
-
-## Week 6 — 15h
-- [ ] C1-22 (5h) integration / browser E2E
-- [ ] C1-23 (4h) security & accessibility review
-- [ ] C1-24 (4h) staging deploy / smoke / migration
-- [ ] C1-25 (2h) README, docs, demo and handover
-
-## Completion evidence template
-`C1-XX | commit: ... | changed files: ... | command: ... | tests: ... | reviewer: ... | date: ...`
+Total: 135h. Evidence: APPROVAL_RECORD.md, C1-01_DESIGN_SPEC.md, C1-02_VERIFICATION.md (when generated).

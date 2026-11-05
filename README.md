@@ -1,10 +1,7 @@
-# OneOffice Core — Phase 1 Starter Pack
+﻿# OneOffice Core
 
-This pack is **the shared implementation contract and starter workspace**, not a finished web app.
+.NET10 solution with Api, Core and Infrastructure. Read docs/C1-01_DESIGN_SPEC.md, docs/DECISIONS.md and docs/PROJECT_STATE.md. Owner authority is docs/APPROVAL_RECORD.md.
 
-1. Read `AI_AGENT_START_HERE.md` and `docs/ONEOFFICE_MASTER_PLAN.md`.
-2. Give the `docs/` directory (plus current code and git state) to every coding AI agent.
-3. Keep `docs/PROJECT_STATE.md` current after each verified ticket.
-4. Start with C1-01 (domain decisions/ERD/API contract); C1-02 is actual .NET solution bootstrap.
+Build: dotnet restore OneOffice.slnx; dotnet build OneOffice.slnx --no-restore. Environment-specific verified commands are in docs/C1-02_VERIFICATION.md. Scaffold checks: powershell -NoProfile -ExecutionPolicy Bypass -File scripts/Verify-Scaffold.ps1.
 
-Develop with .NET 10 SDK, Node.js, Docker and PostgreSQL 16. Project code has not yet been compiled in the environment used to create this package.
+C1-01/C1-02 complete. Database/auth/frontend implementation awaits subsequent tickets. Planned budget135h within120–150h. Stop for Owner review before C1-03.

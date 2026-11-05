@@ -1,21 +1,25 @@
-# Architecture Decision Register — OneOffice Core
+﻿# Decisions — 05/11/2026
 
-Date: 2026-11-04. Every change must be accompanied by rationale, tradeoffs, impact on tests, and owner approval.
+Authority: APPROVAL_RECORD.md, ONEOFFICE-C1-APPROVAL-001. Implementation contract: C1-01_DESIGN_SPEC.md.
 
-| ADR | Decision | State | Why |
-|---|---|---|---|
-| ADR-001 | Internal single-company product; no Tenant table | Baseline | user-selected deployment model |
-| ADR-002 | Clean Modular Monolith, modules Identity / Organization / AccessControl | Baseline | solo developer, future modularity |
-| ADR-003 | .NET 10 LTS + EF Core 10 + Npgsql compatible; PostgreSQL 16 | Baseline | .NET 8/9 EOS 2026-11-10 |
-| ADR-004 | React + TypeScript + Vite + shadcn/ui + Tailwind | Baseline | polished SPA, lower overhead than SSR |
-| ADR-005 | UUID PKs, UTC timestamps, NO ACTION/RESTRICT domain FKs | Baseline | robust hierarchy and traceability |
-| ADR-006 | Department adjacency list + recursive CTE | Baseline | avoids premature materialized-path complexity |
-| ADR-007 | JWT short-lived access + rotated hashed refresh token (HttpOnly cookie) | Baseline | secure web sessions |
-| ADR-008 | RBAC permission + record scopes All/Department/DepartmentTree/Self | Baseline | future approvals require correct org authorization |
-| ADR-009 | Business rule: leader belongs to exact department | Proposed — needs owner approval | safe deterministic resolver |
-| ADR-010 | Manager only views scoped employees; HR admin edits | Proposed — needs owner approval | avoid unintended permissions |
-| ADR-011 | Block inactivation with active dependencies | Proposed — needs owner approval | avoid orphaned workflow identities |
-| ADR-012 | Move user requires explicit manager reassignment | Proposed — needs owner approval | avoid wrong approval path |
-| ADR-013 | Phase 1 six weeks / 105h, 15–20h/week | Planning baseline | reduced dev hours + polished UI |
+| Decision | Status | Impact |
+|---|---|---|
+| ADR-001–008 | Baseline retained | Single company, modular monolith, .NET10/EF10/PostgreSQL16, React SPA, UUID/UTC, adjacency list, JWT/RBAC |
+| ADR-009 | Superseded by ADR-024 | Leader can lead multiple departments outside membership |
+| ADR-010–012 | Superseded by B01–B03 | Read-only managers, explicit scope, dependencies, keep valid cross-department manager |
+| ADR-013 | Superseded by PLAN-001 | Old 105h calendar retired |
+| ADR-014 | Confirmed | Root solution, three projects |
+| ADR-015 | Approved | Rename SharedKernel project to Core; SharedKernel becomes common folder |
+| ADR-016 | Approved | Assignment-specific permission/scope pairs |
+| ADR-018 | Approved | JWT15min, absolute family7days, rotation/revocation |
+| ADR-023 | Approved | Cross-department active manager, no cycle or automatic RBAC |
+| ADR-024 | Approved | Multiple department leadership, nonunique LeaderId |
+| PLAN-001 | Approved | 120–150h budget; 135h reference |
+| B01 | Approved | Roots, required department/position, explicit manager exemption |
+| B02 | Approved | Least privilege, protected privileged accounts, scoped projections |
+| B03 | Approved | Disable, Version, transaction locks |
+| B04 | Approved | Strict replay, CSRF/Origin, bootstrap and recovery |
+| B05 | Approved | Durable AuditLogs, atomic mutation audit |
 
-Policy: mark Proposed ADRs Approved/Rejected only after direct owner decision. No module should assume approval implicitly.
+Technical resolutions delegated by directive: ManagerExempt + reason and audit, least-privilege catalog, ordered locks, maintenance recovery, AuditLogs dictionary are documented in spec. They are implementation proposals under approved principles, not additional Owner approvals.
+Pending: audit retention proposed365days, deployment domains/secret provider and backup schedule, brand. No automatic audit purge. Deferred: multi-leader-per-department, editable role catalog, hard delete, file uploads, workflow.

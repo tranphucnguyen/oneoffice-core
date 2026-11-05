@@ -31,3 +31,6 @@ Next step:
 
 ## Nhiệm vụ đầu tiên
 C1-01: rà soát và chốt business rules còn mở trong `docs/ONEOFFICE_MASTER_PLAN.md` Section K, sau đó finalize ERD, constraints, DTOs và API contract. Không viết Authentication controller hoặc tự coi C1-01 hoàn thành khi quy tắc nghiệp vụ vẫn chưa được owner duyệt.
+
+## Current directive — 05/11/2026
+C1-01 and C1-02 completed under ONEOFFICE-C1-APPROVAL-001. Read docs/C1-01_DESIGN_SPEC.md and docs/APPROVAL_RECORD.md after master plan. The historical first-task paragraph above is superseded. Await explicit C1-03 assignment.

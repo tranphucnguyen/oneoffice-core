@@ -13,3 +13,4 @@ TestResults/
 *.pfx
 *.pem
 *.key
+.local-dotnet/

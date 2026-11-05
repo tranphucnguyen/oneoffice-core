@@ -1,10 +1,10 @@
-﻿# C1-01 Design Specification — v1.0
+# C1-01 Design Specification — v1.0
 
 Ngày 05/11/2026. Căn cứ ONEOFFICE-C1-APPROVAL-001 trong APPROVAL_RECORD.md.
 Các quyết định Owner được ghi Approved. Chi tiết kỹ thuật dưới đây là phương án triển khai theo ủy quyền, có thể review. Retention audit còn Pending, không bật tự động xóa.
 
 ## Kiến trúc và ownership
-.NET 10, EF Core 10, PostgreSQL 16, React/TypeScript/Vite/Tailwind/shadcn. Single-company Clean Modular Monolith.
+.NET 10, EF Core 10, PostgreSQL 18, React/TypeScript/Vite/Tailwind/shadcn. Single-company Clean Modular Monolith.
 API → Core và Infrastructure. Infrastructure → Core. Core không phụ thuộc EF/HTTP hoặc hai project còn lại. Solution ở root.
 Core/SharedKernel chỉ chứa primitive dùng chung. Core/Modules/{Identity,Organization,AccessControl}/{Domain,Application} chứa domain, use case và ports.
 Identity sở hữu Users và sessions. Organization sở hữu Departments/Positions và kiểm tra membership/reporting/leader. AccessControl sở hữu role/grants. Infrastructure triển khai persistence, token, hashing và durable audit. API sở hữu HTTP DTO/composition.

@@ -29,3 +29,5 @@ Earlier v1.0 schema/UserRoles, same-department leader, bootstrap-unassigned exce
 Design approval → scaffold/build → DB/constraints/CI → auth/security → organization/scopes → polished UI → E2E/security → staging/handover. Capacity15–20h/week, budget120–150h, reference135h, about7–9weeks. No fixed completion date committed.
 Work ticket by ticket, record commands/tests, preserve owner edits. Domain free of EF/HTTP. No secrets in source. Integration tests use PostgreSQL, browser tests cover denied access and session expiry. Scope excludes workflow/dynamic forms/SSO/payroll/multitenancy.
 After C1-02 stop for Owner/reviewer. C1-03 requires a separate assignment.
+
+C1-03 Owner update: PostgreSQL18 native Windows replaces PostgreSQL16; existing server127.0.0.1:5433, no development container. ADR-025 and C1-03_DATABASE_SETUP.md govern provisioning. EF migrations execution deferred to C1-06; C1-03 connection acceptance still blocked by credentials.

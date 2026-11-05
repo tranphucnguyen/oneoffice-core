@@ -14,3 +14,7 @@ TestResults/
 *.pem
 *.key
 .local-dotnet/
+
+**/secrets.json
+*.dump
+*.backup

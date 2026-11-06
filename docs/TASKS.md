@@ -8,7 +8,7 @@ Approved budget120–150h, reference135h, 15–20h/week. v0.2 summed130h; add2h 
 | C1-02 | 4 | DONE | Solution/references/build |
 | C1-03 | 6 | DONE | Native PostgreSQL18/EF foundation; migrations deferred C1-06 |
 | C1-04 | 6 | DONE | Errors/OpenAPI/health/audit infrastructure |
-| C1-05 | 4 | NOT STARTED | Tests/format/CI |
+| C1-05 | 4 | DONE (GitHub CI NOT VERIFIED) | Tests/format/CI |
 | C1-06 | 6 | NOT STARTED | Entities/constraints/audit mapping |
 | C1-07 | 8 | NOT STARTED | Bootstrap/password/login/recovery |
 | C1-08 | 8 | NOT STARTED | Refresh/replay/logout/me |

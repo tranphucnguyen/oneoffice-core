@@ -10,13 +10,18 @@ internal static class ApiProblems
     {
         var code = status switch
         {
-            400 => "request.invalid", 401 => "auth.session_invalid", 403 => "access.denied",
-            404 => "resource.not_found", 409 => "concurrency.conflict",
-            429 => "rate_limit.exceeded", _ => "server.unexpected"
+            400 => "request.invalid",
+            401 => "auth.session_invalid",
+            403 => "access.denied",
+            404 => "resource.not_found",
+            409 => "concurrency.conflict",
+            429 => "rate_limit.exceeded",
+            _ => "server.unexpected"
         };
         var problem = new ProblemDetails
         {
-            Status = status, Type = $"urn:oneoffice:problem:{code}",
+            Status = status,
+            Type = $"urn:oneoffice:problem:{code}",
             Title = status >= 500 ? "An unexpected error occurred." : "The request could not be completed."
         };
         problem.Extensions["code"] = code;

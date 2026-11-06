@@ -1,0 +1,21 @@
+﻿name: dotnet
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - run: dotnet restore OneOffice.slnx
+      - run: dotnet build OneOffice.slnx --no-restore --configuration Release
+      - run: dotnet format OneOffice.slnx --no-restore --verify-no-changes
+      - run: dotnet test OneOffice.slnx --no-build --configuration Release --filter 'Category!=PostgreSQL' --logger trx --results-directory TestResults
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-results
+          path: TestResults/*.trx

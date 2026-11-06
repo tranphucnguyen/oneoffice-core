@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 using OneOffice.Infrastructure.Persistence;
 
 namespace OneOffice.Api.Foundation;

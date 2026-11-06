@@ -7,7 +7,7 @@ $expected = @{
     'OneOffice.Core' = @()
 }
 $paths = @($solution.Solution.Project | ForEach-Object { $_.Path })
-if ($paths.Count -ne 3) { throw 'Expected exactly three projects' }
+if (@($paths | Where-Object { $_ -notlike 'tests/*' }).Count -ne 3) { throw 'Expected exactly three product projects' }
 foreach ($name in $expected.Keys) {
     if ($paths -notcontains "$name/$name.csproj") { throw "Missing $name" }
     [xml]$project = Get-Content (Join-Path $root "$name/$name.csproj")

@@ -44,7 +44,11 @@ app.Use(async (context, next) =>
 {
     var traceId = Activity.Current?.TraceId.ToString() ?? Guid.NewGuid().ToString("N");
     context.TraceIdentifier = traceId;
-    context.Response.Headers["X-Correlation-ID"] = traceId;
+    context.Response.OnStarting(() =>
+    {
+        context.Response.Headers["X-Correlation-ID"] = traceId;
+        return Task.CompletedTask;
+    });
     var started = Stopwatch.GetTimestamp();
     try { await next(context); }
     finally
@@ -85,3 +89,5 @@ static Task WriteHealth(HttpContext context, HealthReport report)
     context.Response.Headers.CacheControl = "no-store";
     return context.Response.WriteAsJsonAsync(new { status = report.Status == HealthStatus.Healthy ? "healthy" : "unavailable" });
 }
+
+public partial class Program { }

@@ -1,4 +1,4 @@
-﻿namespace OneOffice.Core.SharedKernel.Auditing;
+namespace OneOffice.Core.SharedKernel.Auditing;
 
 // Payloads must be field-allowlisted and sanitized before construction.
 public sealed record AuditEvent(
